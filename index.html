@@ -113,7 +113,9 @@
                     <div class="col-md-4">
                         <div class="card mb-4 box-shadow"> 
 <!--                            <img class="card-img-top" src="images/G_1.jpg" alt="Card image cap">-->
-                            <a data-fancybox="images" href="images/C_1.jpg"><img class="card-img-top" src="images/C_1.jpg" alt="Card image cap"></a>
+                            <a data-fancybox="images" href="images/G_1.jpg"><img class="card-img-top" src="images/G_1.jpg" alt="Card image cap"></a>
+                            <a data-fancybox="images" href="images/G_2.jpg"><img class="card-img-top" src="images/G_2.jpg" alt="Card image cap" hidden></a>
+
                             <div class="card-body">
                                 <p class="card-text">類型：套房
                                     <br>坪數：約6坪
@@ -127,7 +129,10 @@
                         </div>
                     </div>
                     <div class="col-md-4">
-                        <div class="card mb-4 box-shadow"> <img class="card-img-top" src="images/C_1.jpg" alt="Card image cap">
+                        <div class="card mb-4 box-shadow"> 
+<!--                            <img class="card-img-top" src="images/C_1.jpg" alt="Card image cap">-->
+                            <a data-fancybox="images1" href="images/C_1.jpg"><img class="card-img-top" src="images/C_1.jpg" alt="Card image cap"></a>
+                            <a data-fancybox="images1" href="images/C_2.jpg"><img class="card-img-top" src="images/C_2.jpg" alt="Card image cap" hidden></a>
                             <div class="card-body">
                                 <p class="card-text">類型：套房
                                     <br>坪數：約5坪
@@ -184,7 +189,7 @@
     <script>
         $(function () {
             
-            $('[data-fancybox="images"]').fancybox({
+            $('[data-fancybox]').fancybox({
     afterLoad : function(instance, current) {
         var pixelRatio = window.devicePixelRatio || 1;
 
@@ -194,6 +199,19 @@
         }
     }
 });
+            
+//                        $('[data-fancybox="images1"]').fancybox({
+//    afterLoad : function(instance, current) {
+//        var pixelRatio = window.devicePixelRatio || 1;
+//
+//        if ( pixelRatio > 1.5 ) {
+//            current.width  = current.width  / pixelRatio;
+//            current.height = current.height / pixelRatio;
+//        }
+//    }
+//});
+            
+            
             
             $('.btn-outline-secondary').click(function () {
                 alert('功能開發中');
