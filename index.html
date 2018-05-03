@@ -12,6 +12,20 @@
     <link href="./css/bootstrap.min.css" rel="stylesheet">
     <!-- Custom styles for this template -->
     <link href="./css/album.css" rel="stylesheet"> </head>
+    <!-- Add fancyBox main JS and CSS files -->	
+	
+    
+        
+    
+<!--    https://fancyapps.com/fancybox/3/-->
+   <script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.3.5/jquery.fancybox.min.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.3.5/jquery.fancybox.min.js"></script>
+
+
+
+
 <style>
     .jumbotron {
         background-image: url(/images/header.JPG);
@@ -97,7 +111,9 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-4">
-                        <div class="card mb-4 box-shadow"> <img class="card-img-top" src="images/G_1.jpg" alt="Card image cap">
+                        <div class="card mb-4 box-shadow"> 
+<!--                            <img class="card-img-top" src="images/G_1.jpg" alt="Card image cap">-->
+                            <a data-fancybox="images" href="images/C_1.jpg"><img class="card-img-top" src="images/C_1.jpg" alt="Card image cap"></a>
                             <div class="card-body">
                                 <p class="card-text">類型：套房
                                     <br>坪數：約6坪
@@ -124,6 +140,7 @@
                             </div>
                         </div>
                     </div>
+                    
                     <!--
             <div class="col-md-4">
               <div class="card mb-4 box-shadow">
@@ -142,7 +159,11 @@
             </div>
 --></div>
             </div>
+            
+        
+            
         </div>
+        
     </main>
     <footer class="text-muted">
         <div class="container">
@@ -153,15 +174,27 @@
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-    <script src="/js/jquery-3.2.1.slim.min.js" crossorigin="anonymous"></script>
-    <script>
-        window.jQuery || document.write('<script src="../../../../assets/js/vendor/jquery-slim.min.js"><\/script>')
-    </script>
+    
+  
     <script src="./js/popper.min.js"></script>
     <script src="./js/bootstrap.min.js"></script>
-    <script src="./js/holder.min.js"></script>
+    <script src="./js/holder.min.js"></script>  
+        
+    
     <script>
         $(function () {
+            
+            $('[data-fancybox="images"]').fancybox({
+    afterLoad : function(instance, current) {
+        var pixelRatio = window.devicePixelRatio || 1;
+
+        if ( pixelRatio > 1.5 ) {
+            current.width  = current.width  / pixelRatio;
+            current.height = current.height / pixelRatio;
+        }
+    }
+});
+            
             $('.btn-outline-secondary').click(function () {
                 alert('功能開發中');
             });
